@@ -19,7 +19,7 @@ function App() {
 
 
 
-  const handleFetchRepo = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleFetchRepo = async () => {
     await refetch()
   }
 
