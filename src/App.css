@@ -23,10 +23,10 @@
   ;
   gap: 1px;
   justify-content: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+  box-shadow: 2px 0px 10px rgba(223, 216, 216, 0.774)
 }
 
-button{
+.card button{
   border: none;
   font-weight: bold;
   background-color: rgba(206, 223, 47, 0.445);
@@ -36,4 +36,36 @@ button{
   right: 0;
   top: 0;
   border-radius:  0 0 0px 10px;
+}
+
+
+.boxInput{
+  /* margin: 50px auto;
+  text-align: center; */
+ 
+}
+
+.boxInput input{
+  padding: 10px;
+  width:250px;
+  border-radius: 50px;
+  border: none;
+}
+
+.form{
+  /* border: 1px solid wheat; */
+  padding: 20px;
+  width:350px;
+  margin: 50px auto;
+  text-align: center;
+  display: flex;
+  gap: 20px;
+}
+
+.form button{
+  background-color: aqua;
+   border: none;
+   font-weight: bold;
+   border-radius: 10px;
+ 
 }
