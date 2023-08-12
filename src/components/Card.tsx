@@ -24,11 +24,12 @@ function Card({ repository, isFavorite }: CardProps) {
   return (
 
     <div className="card" >
-      <h4>{repository.name}</h4>
-     {repository.language &&  <p>Lenguajes: {repository.language}</p>}
+      <h5>{repository.name}</h5>
+     {repository.language &&  <h6>Lenguajes: {repository.language}</h6>}
       {repository.description && <span>Description: {repository.description}</span>}
 
       <button onClick={toggleFavorite}>{isFavorite ? "Dislike" : "Like"}</button>
+      <a href={repository.html_url} target="_blank">Visitar</a>
     </div>
 
 

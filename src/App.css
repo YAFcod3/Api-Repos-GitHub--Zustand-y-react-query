@@ -1,4 +1,4 @@
-.cards{
+.cards {
   max-width: 1024px;
   margin: 10px auto;
   display: flex;
@@ -10,7 +10,7 @@
   ;
 }
 
-.card{
+.card {
   background-color: rgba(228, 228, 228, 0.473);
   color: black;
   width: 300px;
@@ -19,14 +19,25 @@
   padding: 10px;
   position: relative;
   display: flex;
-  flex-direction: column
-  ;
+  flex-direction: column;
   gap: 1px;
   justify-content: center;
-  box-shadow: 2px 0px 10px rgba(223, 216, 216, 0.774)
+  box-shadow: 2px 0px 10px rgba(223, 216, 216, 0.774);
+  margin: 0 auto;
+
 }
 
-.card button{
+.card h6 {
+  color: rgba(215, 238, 11, 0.719);
+  font-weight: 100;
+}
+
+.card span {
+  font-size: 13px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card button {
   border: none;
   font-weight: bold;
   background-color: rgba(206, 223, 47, 0.445);
@@ -35,37 +46,57 @@
   position: absolute;
   right: 0;
   top: 0;
-  border-radius:  0 0 0px 10px;
+  border-radius: 0 0 0px 10px;
+}
+
+.card button:hover {
+  background-color: rgba(200, 221, 13, 0.863);
+
 }
 
 
-.boxInput{
+
+.boxInput {
   /* margin: 50px auto;
   text-align: center; */
- 
+
 }
 
-.boxInput input{
+.boxInput input {
   padding: 10px;
-  width:250px;
+  width: 250px;
   border-radius: 50px;
   border: none;
 }
 
-.form{
+.form {
   /* border: 1px solid wheat; */
   padding: 20px;
-  width:350px;
+  width: 350px;
   margin: 50px auto;
-  text-align: center;
+  /* text-align: center; */
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 
-.form button{
-  background-color: aqua;
-   border: none;
-   font-weight: bold;
-   border-radius: 10px;
- 
+.form button {
+  background-color: rgba(206, 223, 47, 0.863);
+  border: none;
+  font-weight: bold;
+  border-radius: 10px;
+padding: 6px;
+}
+
+
+
+.card a {
+  color: wheat;
+  margin: 2px;
+  text-align: right;
+}
+
+.card a:hover {
+  color: black;
 }

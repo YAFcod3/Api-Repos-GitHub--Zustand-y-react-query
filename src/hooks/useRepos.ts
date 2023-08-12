@@ -14,5 +14,5 @@ async function fetchRepos (ctx:QueryFunctionContext){
 
 export function useFetchRepositories(githubUser:string){
 
- return    useQuery(['repos',githubUser],fetchRepos)
+ return    useQuery(['repos',githubUser],fetchRepos,{enabled:false})
 }

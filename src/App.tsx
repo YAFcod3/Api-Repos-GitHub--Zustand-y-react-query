@@ -1,5 +1,6 @@
 
 // import { useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import Card from './components/Card'
 import { useFetchRepositories } from './hooks/useRepos'
@@ -8,16 +9,24 @@ import { useFavoriteReposStore } from './store/favoriteRepo'
 
 function App() {
 
+  const [input, setInput] = useState<string>('')
 
-  const { data, isLoading } = useFetchRepositories('YAFcod3')
-  console.log(data)
+  const { data: repos, isFetching, refetch } = useFetchRepositories(`${input}`)
+  // console.log(repos)
   const { favoriteReposIds } = useFavoriteReposStore()
 
 
-  if (isLoading) return <div>...Loading</div>
 
 
-  // const {input,setInput}=useState<string>('')
+
+  const handleFetchRepo = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    await refetch()
+  }
+
+
+
+
+  console.log(repos?.length)
 
 
   return (
@@ -26,19 +35,35 @@ function App() {
       <div className="form">
         <div className="boxInput">
           <input
-            //  onChange={(e)=>setInput(e.target.value)} 
+            value={input}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
             type="text" placeholder="Escribe: YAFcod3 o tu user de github" />
         </div>
-        <button >Send</button>
+        <button disabled={isFetching} onClick={handleFetchRepo}>Aceptar</button>
+
+        {repos && (
+                <span>{repos?.length} Repositorios</span>
+
+        )}
       </div>
-      <article className='cards'>
 
-        {data?.map(repository => (
-          <Card key={repository.id} repository={repository} isFavorite={favoriteReposIds.includes(repository.id)} />
-        ))}
+      
 
 
-      </article>
+
+      {isFetching && (
+        <div>...Loading</div>
+      )}
+      {repos && (
+        <article className='cards'>
+
+          {repos?.map(repository => (
+            <Card key={repository.id} repository={repository} isFavorite={favoriteReposIds.includes(repository.id)} />
+          ))}
+
+
+        </article>
+      )}
     </>
   )
 }
