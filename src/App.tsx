@@ -9,7 +9,7 @@ import { useFavoriteReposStore } from './store/favoriteRepo'
 
 function App() {
 
-  const [input, setInput] = useState<string>('')
+  const [input, setInput] = useState<string>('YAFcod3')
 
   const { data: repos, isFetching, refetch } = useFetchRepositories(`${input}`)
   // console.log(repos)
@@ -37,7 +37,7 @@ function App() {
           <input
             value={input}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
-            type="text" placeholder="Escribe: YAFcod3 o tu user de github" />
+            type="text" placeholder="Escribe tu usuario de Github" />
         </div>
         <button disabled={isFetching} onClick={handleFetchRepo}>Aceptar</button>
 
